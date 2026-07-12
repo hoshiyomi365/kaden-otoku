@@ -15,22 +15,37 @@
   .meta { font-size:.82rem; color:var(--sub); }
   .pr { background:#fffbea; border:1px solid #fde68a; color:#92400e; font-size:.78rem;
         padding:8px 12px; border-radius:8px; margin:12px 0; }
-  .card { position:relative; background:var(--card); border-radius:12px; padding:14px 16px;
+  .card { display:flex; gap:12px; background:var(--card); border-radius:12px; padding:12px;
           margin:14px 0; box-shadow:0 1px 4px rgba(0,0,0,.06); }
-  .rank { position:absolute; top:-10px; left:-8px; background:var(--accent); color:#fff;
-          width:30px; height:30px; border-radius:50%; display:flex; align-items:center;
-          justify-content:center; font-weight:700; font-size:.9rem; }
-  .card h2 { font-size:.98rem; margin:.2em 0 .1em; padding-left:20px; }
-  .shop { font-size:.76rem; color:var(--sub); margin-bottom:8px; }
-  .grid { font-size:.86rem; }
-  .row { display:flex; justify-content:space-between; padding:3px 0; border-bottom:1px dashed #edf2f7; }
-  .row span { color:var(--sub); }
-  .row.eff b { color:#c53030; }
-  .row.profit b { color:#276749; font-size:1.02rem; }
-  .row.profit em { font-style:normal; font-size:.82rem; }
-  .btn { display:block; text-align:center; margin-top:12px; padding:11px; border-radius:8px;
-         background:var(--accent); color:#fff; text-decoration:none; font-weight:700; }
+  .thumb { position:relative; flex:0 0 120px; width:120px; display:flex; flex-direction:column;
+           align-items:center; justify-content:center; text-decoration:none; }
+  .thumb img { width:120px; height:120px; object-fit:contain; border-radius:8px; background:#fff;
+               border:1px solid #edf2f7; }
+  .thumb .noimg { width:120px; height:120px; display:flex; align-items:center; justify-content:center;
+                  color:#cbd5e0; font-size:.8rem; border:1px solid #edf2f7; border-radius:8px; }
+  .rank { position:absolute; top:-8px; left:-8px; background:var(--accent); color:#fff;
+          width:28px; height:28px; border-radius:50%; display:flex; align-items:center;
+          justify-content:center; font-weight:700; font-size:.85rem; z-index:1; }
+  .thumb .tap { margin-top:6px; font-size:.68rem; color:var(--accent); font-weight:700; }
+  .info { flex:1; min-width:0; }
+  .info .name { display:block; font-size:.92rem; font-weight:600; color:var(--ink);
+                text-decoration:none; margin-bottom:4px; }
+  .info .name:hover { text-decoration:underline; }
+  .shop { font-size:.74rem; color:var(--sub); margin-bottom:6px; }
+  .lines { font-size:.82rem; line-height:1.7; }
+  .lines b { font-size:.9rem; }
+  .lines .eff b { color:#c53030; }
+  .lines .profit { background:#f0fff4; border-radius:6px; padding:2px 6px; margin-top:2px; }
+  .lines .profit b { color:#276749; font-size:1rem; }
+  .btn { display:block; text-align:center; margin-top:10px; padding:9px; border-radius:8px;
+         background:var(--accent); color:#fff; text-decoration:none; font-weight:700; font-size:.9rem; }
   .empty { text-align:center; color:var(--sub); padding:40px 0; }
+  /* 狭い画面でも横並び維持(画像だけ縮小) */
+  @media (max-width:400px) {
+    .thumb { flex:0 0 96px; width:96px; }
+    .thumb img, .thumb .noimg { width:96px; height:96px; }
+    .lines { font-size:.78rem; }
+  }
   footer { font-size:.74rem; color:var(--sub); margin:24px 0 40px; text-align:center; }
 </style>
 </head>
@@ -43,97 +58,115 @@
   <div class="pr">※本ページはアフィリエイト広告(バリューコマース)を利用しています。価格・ポイント・在庫は変動するため、必ず各商品ページの最新表示をご確認ください。</div>
 
     <article class="card">
-      <div class="rank">1</div>
-      <h2>象印(ZOJIRUSHI) ES-LA30-WA</h2>
-      <div class="shop">デンキチWeb Yahoo!店</div>
-      <div class="grid">
-        <div class="row"><span>ヤフショ価格</span><b>¥58,127</b></div>
-        <div class="row"><span>クーポン</span><b>-¥1,500</b></div>
-        <div class="row"><span>獲得ポイント</span><b>9,655pt</b></div>
-        <div class="row eff"><span>実質価格</span><b>¥47,221</b></div>
-        <div class="row"><span>買取価格</span><b>¥53,500</b></div>
-        <div class="row profit"><span>見込み利益</span><b>¥6,279 <em>(11.7%)</em></b></div>
+      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4974305228291.html" target="_blank" rel="nofollow sponsored noopener">
+        <span class="rank">1</span><img src="https://item-shopping.c.yimg.jp/i/g/denkichiweb_4974305228291" alt="象印(ZOJIRUSHI) ES-LA30-WA" loading="lazy">
+        <span class="tap">タップで商品へ ▶</span>
+      </a>
+      <div class="info">
+        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4974305228291.html" target="_blank" rel="nofollow sponsored noopener">象印(ZOJIRUSHI) ES-LA30-WA</a>
+        <div class="shop">🏬 デンキチWeb Yahoo!店</div>
+        <div class="lines">
+          <div>💰 ヤフショ価格 <b>¥58,127</b>（クーポン -¥1,500）</div>
+          <div>🎁 獲得ポイント <b>9,655pt</b></div>
+          <div class="eff">💻 実質価格 <b>¥47,221</b></div>
+          <div class="profit">📦 買取 ¥53,500 → 利益 <b>¥6,279</b>（11.7%）</div>
+        </div>
+        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4974305228291.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
       </div>
-      <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4974305228291.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
     </article>
 
     <article class="card">
-      <div class="rank">2</div>
-      <h2>TOTO TCF8FKM02 #NW1</h2>
-      <div class="shop">Joshin web</div>
-      <div class="grid">
-        <div class="row"><span>ヤフショ価格</span><b>¥42,445</b></div>
-        <div class="row"><span>クーポン</span><b>-¥1,500</b></div>
-        <div class="row"><span>獲得ポイント</span><b>9,124pt</b></div>
-        <div class="row eff"><span>実質価格</span><b>¥30,282</b></div>
-        <div class="row"><span>買取価格</span><b>¥34,200</b></div>
-        <div class="row profit"><span>見込み利益</span><b>¥3,918 <em>(11.5%)</em></b></div>
+      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978103-23-44999.html" target="_blank" rel="nofollow sponsored noopener">
+        <span class="rank">2</span><img src="https://item-shopping.c.yimg.jp/i/g/joshin_4940577978103-23-44999" alt="TOTO TCF8FKM02 #NW1" loading="lazy">
+        <span class="tap">タップで商品へ ▶</span>
+      </a>
+      <div class="info">
+        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978103-23-44999.html" target="_blank" rel="nofollow sponsored noopener">TOTO TCF8FKM02 #NW1</a>
+        <div class="shop">🏬 Joshin web</div>
+        <div class="lines">
+          <div>💰 ヤフショ価格 <b>¥42,445</b>（クーポン -¥1,500）</div>
+          <div>🎁 獲得ポイント <b>9,124pt</b></div>
+          <div class="eff">💻 実質価格 <b>¥30,282</b></div>
+          <div class="profit">📦 買取 ¥34,200 → 利益 <b>¥3,918</b>（11.5%）</div>
+        </div>
+        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978103-23-44999.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
       </div>
-      <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978103-23-44999.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
     </article>
 
     <article class="card">
-      <div class="rank">3</div>
-      <h2>TOTO TCF8FKM02 #SC1</h2>
-      <div class="shop">Joshin web</div>
-      <div class="grid">
-        <div class="row"><span>ヤフショ価格</span><b>¥42,445</b></div>
-        <div class="row"><span>クーポン</span><b>-¥1,500</b></div>
-        <div class="row"><span>獲得ポイント</span><b>9,124pt</b></div>
-        <div class="row eff"><span>実質価格</span><b>¥30,282</b></div>
-        <div class="row"><span>買取価格</span><b>¥34,200</b></div>
-        <div class="row profit"><span>見込み利益</span><b>¥3,918 <em>(11.5%)</em></b></div>
+      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978097-23-44999.html" target="_blank" rel="nofollow sponsored noopener">
+        <span class="rank">3</span><img src="https://item-shopping.c.yimg.jp/i/g/joshin_4940577978097-23-44999" alt="TOTO TCF8FKM02 #SC1" loading="lazy">
+        <span class="tap">タップで商品へ ▶</span>
+      </a>
+      <div class="info">
+        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978097-23-44999.html" target="_blank" rel="nofollow sponsored noopener">TOTO TCF8FKM02 #SC1</a>
+        <div class="shop">🏬 Joshin web</div>
+        <div class="lines">
+          <div>💰 ヤフショ価格 <b>¥42,445</b>（クーポン -¥1,500）</div>
+          <div>🎁 獲得ポイント <b>9,124pt</b></div>
+          <div class="eff">💻 実質価格 <b>¥30,282</b></div>
+          <div class="profit">📦 買取 ¥34,200 → 利益 <b>¥3,918</b>（11.5%）</div>
+        </div>
+        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978097-23-44999.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
       </div>
-      <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fjoshin%2F4940577978097-23-44999.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
     </article>
 
     <article class="card">
-      <div class="rank">4</div>
-      <h2>TOTO TCF8CKM01 #NW1</h2>
-      <div class="shop">ホームセンターバローYahoo!店</div>
-      <div class="grid">
-        <div class="row"><span>ヤフショ価格</span><b>¥37,200</b></div>
-        <div class="row"><span>クーポン</span><b>-¥1,500</b></div>
-        <div class="row"><span>獲得ポイント</span><b>6,305pt</b></div>
-        <div class="row eff"><span>実質価格</span><b>¥29,648</b></div>
-        <div class="row"><span>買取価格</span><b>¥33,000</b></div>
-        <div class="row profit"><span>見込み利益</span><b>¥3,352 <em>(10.2%)</em></b></div>
+      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978134.html" target="_blank" rel="nofollow sponsored noopener">
+        <span class="rank">4</span><img src="https://item-shopping.c.yimg.jp/i/g/hcvalor_vh-4940577978134" alt="TOTO TCF8CKM01 #NW1" loading="lazy">
+        <span class="tap">タップで商品へ ▶</span>
+      </a>
+      <div class="info">
+        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978134.html" target="_blank" rel="nofollow sponsored noopener">TOTO TCF8CKM01 #NW1</a>
+        <div class="shop">🏬 ホームセンターバローYahoo!店</div>
+        <div class="lines">
+          <div>💰 ヤフショ価格 <b>¥37,200</b>（クーポン -¥1,500）</div>
+          <div>🎁 獲得ポイント <b>6,305pt</b></div>
+          <div class="eff">💻 実質価格 <b>¥29,648</b></div>
+          <div class="profit">📦 買取 ¥33,000 → 利益 <b>¥3,352</b>（10.2%）</div>
+        </div>
+        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978134.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
       </div>
-      <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978134.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
     </article>
 
     <article class="card">
-      <div class="rank">5</div>
-      <h2>TOTO TCF8CKM01 #SC1</h2>
-      <div class="shop">ホームセンターバローYahoo!店</div>
-      <div class="grid">
-        <div class="row"><span>ヤフショ価格</span><b>¥37,200</b></div>
-        <div class="row"><span>クーポン</span><b>-¥1,500</b></div>
-        <div class="row"><span>獲得ポイント</span><b>6,305pt</b></div>
-        <div class="row eff"><span>実質価格</span><b>¥29,648</b></div>
-        <div class="row"><span>買取価格</span><b>¥33,000</b></div>
-        <div class="row profit"><span>見込み利益</span><b>¥3,352 <em>(10.2%)</em></b></div>
+      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978127.html" target="_blank" rel="nofollow sponsored noopener">
+        <span class="rank">5</span><img src="https://item-shopping.c.yimg.jp/i/g/hcvalor_vh-4940577978127" alt="TOTO TCF8CKM01 #SC1" loading="lazy">
+        <span class="tap">タップで商品へ ▶</span>
+      </a>
+      <div class="info">
+        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978127.html" target="_blank" rel="nofollow sponsored noopener">TOTO TCF8CKM01 #SC1</a>
+        <div class="shop">🏬 ホームセンターバローYahoo!店</div>
+        <div class="lines">
+          <div>💰 ヤフショ価格 <b>¥37,200</b>（クーポン -¥1,500）</div>
+          <div>🎁 獲得ポイント <b>6,305pt</b></div>
+          <div class="eff">💻 実質価格 <b>¥29,648</b></div>
+          <div class="profit">📦 買取 ¥33,000 → 利益 <b>¥3,352</b>（10.2%）</div>
+        </div>
+        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978127.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
       </div>
-      <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fhcvalor%2Fvh-4940577978127.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
     </article>
 
     <article class="card">
-      <div class="rank">6</div>
-      <h2>東芝(TOSHIBA) VC-CLX73(C)</h2>
-      <div class="shop">デンキチWeb Yahoo!店</div>
-      <div class="grid">
-        <div class="row"><span>ヤフショ価格</span><b>¥29,225</b></div>
-        <div class="row"><span>クーポン</span><b>-¥1,000</b></div>
-        <div class="row"><span>獲得ポイント</span><b>4,953pt</b></div>
-        <div class="row eff"><span>実質価格</span><b>¥23,441</b></div>
-        <div class="row"><span>買取価格</span><b>¥26,000</b></div>
-        <div class="row profit"><span>見込み利益</span><b>¥2,559 <em>(9.8%)</em></b></div>
+      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904530128448.html" target="_blank" rel="nofollow sponsored noopener">
+        <span class="rank">6</span><img src="https://item-shopping.c.yimg.jp/i/g/denkichiweb_4904530128448" alt="東芝(TOSHIBA) VC-CLX73(C)" loading="lazy">
+        <span class="tap">タップで商品へ ▶</span>
+      </a>
+      <div class="info">
+        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904530128448.html" target="_blank" rel="nofollow sponsored noopener">東芝(TOSHIBA) VC-CLX73(C)</a>
+        <div class="shop">🏬 デンキチWeb Yahoo!店</div>
+        <div class="lines">
+          <div>💰 ヤフショ価格 <b>¥29,225</b>（クーポン -¥1,000）</div>
+          <div>🎁 獲得ポイント <b>4,953pt</b></div>
+          <div class="eff">💻 実質価格 <b>¥23,441</b></div>
+          <div class="profit">📦 買取 ¥26,000 → 利益 <b>¥2,559</b>（9.8%）</div>
+        </div>
+        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904530128448.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
       </div>
-      <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904530128448.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
     </article>
   <footer>
     実質価格 = 買取価格 − 見込み利益(ポイント・クーポン還元後の実質支払額)。<br>
-    最終更新 2026/07/13 08:27<br>
+    最終更新 2026/07/13 08:51<br>
     #ヤフーショッピング #ポイ活 #せどり
   </footer>
 </div>
