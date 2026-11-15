@@ -8,135 +8,91 @@
 <meta property="og:description" content="ヤフショの実質価格と買取価格の差で利益が出る家電を毎日自動更新。価格・ポイント・在庫は変動するため各商品ページの最新表示をご確認ください。">
 <meta property="og:url" content="https://kaden-otoku.pages.dev/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://item-shopping.c.yimg.jp/i/g/denkichiweb_4904710443255">
+
 <meta name="twitter:card" content="summary">
-<title>お得家電リスト 2026/10/22 | ヤフショ家電せどり</title>
+<title>お得家電リスト 2026/11/16 | ヤフショ家電せどり</title>
 <style>
-  :root { --accent:#e53e3e; --bg:#f7fafc; --card:#fff; --ink:#2d3748; --sub:#718096; }
+  /* レシート用紙の暖色ニュートラル。色は利益の緑だけ */
+  :root { --bg:#f7f4ee; --paper:#fdfbf7; --raised:#efe9df; --line:rgba(31,27,22,.08);
+           --ink:#1f1b16; --sub:#5e554a; --muted:#7b7266; --plus:#15803d;
+           --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
   * { box-sizing:border-box; }
-  body { margin:0; font-family:-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
-         background:var(--bg); color:var(--ink); line-height:1.5; }
-  .wrap { max-width:640px; margin:0 auto; padding:16px; }
-  header h1 { font-size:1.25rem; margin:.2em 0; }
-  .meta { font-size:.82rem; color:var(--sub); }
-  .notice { background:#fffbea; border:1px solid #fde68a; color:#92400e; font-size:.78rem;
-            padding:8px 12px; border-radius:8px; margin:12px 0; }
-  .ad-disclosure { font-size:.62rem; color:#a0aec0; margin-top:10px; }
-  .sortbar { display:flex; align-items:center; gap:8px; margin:14px 0 4px; }
-  .sortlabel { font-size:.76rem; color:var(--sub); }
-  .sortbtn { font:inherit; font-size:.82rem; font-weight:700; padding:6px 14px; border-radius:999px;
-             border:1px solid #cbd5e0; background:#fff; color:var(--sub); cursor:pointer;
-             -webkit-appearance:none; appearance:none; }
-  .sortbtn.on { background:var(--accent); border-color:var(--accent); color:#fff; }
-  .card { display:flex; gap:12px; background:var(--card); border-radius:12px; padding:12px;
-          margin:14px 0; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  body { margin:0; font-family:-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
+         background:var(--bg); color:var(--ink); font-size:14px; line-height:20px; }
+  p { margin:0; }
+  .wrap { max-width:600px; margin:0 auto; padding:24px 16px 48px; }
+  header h1 { font-size:24px; line-height:32px; font-weight:500; margin:0; }
+  .meta { margin-top:4px; font-size:12px; line-height:16px; color:var(--muted);
+          font-variant-numeric:tabular-nums; }
+  .disclosure { margin-top:16px; padding:12px; border-radius:8px; background:var(--raised);
+                font-size:13px; line-height:20px; color:var(--sub); }
+  .disclosure .tag { display:inline-block; margin-right:8px; padding:0 6px; border-radius:4px;
+                     border:1px solid var(--sub); font-size:12px; line-height:18px; color:var(--ink); }
+  .sortbar { display:flex; align-items:center; justify-content:space-between; margin:24px 0 12px; }
+  .sortlabel { font-size:12px; color:var(--muted); }
+  .seg { display:flex; padding:2px; border-radius:8px; background:var(--raised); }
+  .sortbtn { font:inherit; font-size:13px; padding:4px 12px; border:0; border-radius:6px;
+             background:transparent; color:var(--sub); cursor:pointer;
+             -webkit-appearance:none; appearance:none; transition:background-color .15s, color .15s; }
+  .sortbtn.on { background:var(--paper); color:var(--ink); font-weight:500;
+                box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  #cards { display:flex; flex-direction:column; gap:12px; }
+  .card { display:grid; grid-template-columns:88px 1fr; gap:12px 16px; padding:16px;
+          background:var(--paper); border:1px solid var(--line); border-radius:12px; }
   .card[hidden] { display:none; }
-  .thumb { position:relative; flex:0 0 120px; width:120px; display:flex; flex-direction:column;
-           align-items:center; justify-content:center; text-decoration:none; }
-  .thumb img { width:120px; height:120px; object-fit:contain; border-radius:8px; background:#fff;
-               border:1px solid #edf2f7; }
-  .thumb .noimg { width:120px; height:120px; display:flex; align-items:center; justify-content:center;
-                  color:#cbd5e0; font-size:.8rem; border:1px solid #edf2f7; border-radius:8px; }
-  .rank { position:absolute; top:-8px; left:-8px; background:var(--accent); color:#fff;
-          width:28px; height:28px; border-radius:50%; display:flex; align-items:center;
-          justify-content:center; font-weight:700; font-size:.85rem; z-index:1; }
-  .thumb .tap { margin-top:6px; font-size:.68rem; color:var(--accent); font-weight:700; }
-  .info { flex:1; min-width:0; }
-  .info .name { display:block; font-size:.92rem; font-weight:600; color:var(--ink);
-                text-decoration:none; margin-bottom:4px; }
-  .info .name:hover { text-decoration:underline; }
-  .shop { font-size:.74rem; color:var(--sub); margin-bottom:6px; }
-  .lines { font-size:.82rem; line-height:1.7; }
-  .lines b { font-size:.9rem; }
-  .lines .eff b { color:#c53030; }
-  .lines .profit { background:#f0fff4; border-radius:6px; padding:2px 6px; margin-top:2px; }
-  .lines .profit b { color:#276749; font-size:1rem; }
-  .btn { display:block; text-align:center; margin-top:10px; padding:9px; border-radius:8px;
-         background:var(--accent); color:#fff; text-decoration:none; font-weight:700; font-size:.9rem; }
-  .empty { text-align:center; color:var(--sub); padding:40px 0; }
-  /* 狭い画面でも横並び維持(画像だけ縮小) */
-  @media (max-width:400px) {
-    .thumb { flex:0 0 96px; width:96px; }
-    .thumb img, .thumb .noimg { width:96px; height:96px; }
-    .lines { font-size:.78rem; }
+  .thumb { position:relative; display:block; width:88px; height:88px; }
+  .thumb img, .thumb .noimg { width:88px; height:88px; object-fit:contain; border-radius:8px;
+                              background:#fff; border:1px solid var(--line); }
+  .thumb .noimg { display:flex; align-items:center; justify-content:center;
+                  font-size:12px; color:var(--muted); }
+  .rank { position:absolute; top:4px; left:4px; min-width:20px; height:20px; padding:0 4px;
+          border-radius:4px; background:var(--paper); border:1px solid var(--line);
+          font-family:var(--mono); font-size:12px; line-height:18px; text-align:center;
+          color:var(--sub); font-variant-numeric:tabular-nums; }
+  .info { min-width:0; align-self:center; }
+  .name { font-size:15px; line-height:22px; font-weight:500; overflow-wrap:anywhere; }
+  .shop { margin-top:4px; font-size:12px; line-height:16px; color:var(--muted); }
+  /* 見せ場: レシートの計算行。等幅数字で桁をそろえ、合計線は点線 */
+  .receipt { grid-column:1 / -1; margin:0; padding:12px 0 0; border-top:1px dashed rgba(31,27,22,.24);
+             font-family:var(--mono); font-size:13px; line-height:20px; font-variant-numeric:tabular-nums; }
+  .receipt .row { display:flex; justify-content:space-between; gap:16px; }
+  .receipt dt { font-family:-apple-system,"Hiragino Sans",sans-serif; color:var(--sub); }
+  .receipt dd { margin:0; color:var(--ink); white-space:nowrap; }
+  .receipt .sum { margin-top:4px; padding-top:4px; border-top:1px dashed rgba(31,27,22,.24); }
+  .receipt .sum dt, .receipt .sum dd { color:var(--ink); font-weight:500; }
+  .receipt .profit { margin-top:8px; padding-top:8px; border-top:3px double rgba(31,27,22,.24);
+                     align-items:baseline; }
+  .receipt .profit dt { color:var(--ink); font-weight:500; }
+  .receipt .profit dt span { margin-left:8px; font-family:var(--mono); font-weight:400; color:var(--plus); }
+  .receipt .profit dd { font-size:18px; line-height:24px; font-weight:600; color:var(--plus); }
+  .btn { grid-column:1 / -1; display:block; height:44px; line-height:44px; text-align:center;
+         border-radius:8px; background:var(--ink); color:#fff; text-decoration:none;
+         font-size:14px; font-weight:500; transition:background-color .15s; }
+  .btn:hover { background:#3a342c; }
+  .btn:focus-visible, .thumb:focus-visible, .sortbtn:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .empty { text-align:center; color:var(--muted); padding:48px 0; }
+  footer { margin-top:32px; font-size:12px; line-height:20px; color:var(--muted); text-align:center; }
+  @media (max-width:360px) {
+    .card { grid-template-columns:72px 1fr; padding:12px; }
+    .thumb, .thumb img, .thumb .noimg { width:72px; height:72px; }
   }
-  footer { font-size:.74rem; color:var(--sub); margin:24px 0 40px; text-align:center; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>🛒 お得家電リスト</h1>
-    <div class="meta">2026/10/22 の検索結果 ／ キャンペーン: ヤフショ感謝デー</div>
+    <h1>お得家電リスト</h1>
+    <p class="meta">2026/11/16 の検索結果 · キャンペーン: 5のつく日</p>
   </header>
-  <div class="notice">⚠️ 価格・ポイント・在庫は変動するため、必ず各商品ページの最新表示をご確認ください。</div>
+  <p class="disclosure"><span class="tag">広告</span>本ページはアフィリエイト広告（バリューコマース）を利用しています。価格・ポイント・在庫は変動するため、購入前に各商品ページの最新表示をご確認ください。</p>
 
-  <div class="sortbar">
-    <span class="sortlabel">並び替え</span>
-    <button type="button" class="sortbtn on" data-key="profit" aria-pressed="true">利益額順</button>
-    <button type="button" class="sortbtn" data-key="margin" aria-pressed="false">利益率順</button>
-  </div>
   <div id="cards">
-
-    <article class="card" data-profit="433" data-margin="1.30">
-      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904710443255.html" target="_blank" rel="nofollow sponsored noopener">
-        <span class="rank">1</span><img src="https://item-shopping.c.yimg.jp/i/g/denkichiweb_4904710443255" alt="タイガー魔法瓶(TIGER) JRI-C060-WO" loading="lazy">
-        <span class="tap">タップで商品へ ▶</span>
-      </a>
-      <div class="info">
-        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904710443255.html" target="_blank" rel="nofollow sponsored noopener">タイガー魔法瓶(TIGER) JRI-C060-WO</a>
-        <div class="shop">🏬 デンキチWeb Yahoo!店</div>
-        <div class="lines">
-          <div>💰 ヤフショ価格 <b>¥38,099</b></div>
-          <div>🎁 獲得ポイント <b>5,032pt</b></div>
-          <div class="eff">💻 実質価格 <b>¥33,067</b></div>
-          <div class="profit">📦 買取 ¥33,500 → 利益 <b>¥433</b>（1.3%）</div>
-        </div>
-        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fdenkichiweb%2F4904710443255.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
-      </div>
-    </article>
-
-    <article class="card" data-profit="374" data-margin="1.60">
-      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fksdenki%2F4549980763667.html" target="_blank" rel="nofollow sponsored noopener">
-        <span class="rank">2</span><img src="https://item-shopping.c.yimg.jp/i/g/ksdenki_4549980763667" alt="パナソニック EH-HN50-A" loading="lazy">
-        <span class="tap">タップで商品へ ▶</span>
-      </a>
-      <div class="info">
-        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fksdenki%2F4549980763667.html" target="_blank" rel="nofollow sponsored noopener">パナソニック EH-HN50-A</a>
-        <div class="shop">🏬 ケーズデンキ Yahoo!ショップ</div>
-        <div class="lines">
-          <div>💰 ヤフショ価格 <b>¥29,700</b></div>
-          <div>🎁 獲得ポイント <b>6,574pt</b></div>
-          <div class="eff">💻 実質価格 <b>¥23,126</b></div>
-          <div class="profit">📦 買取 ¥23,500 → 利益 <b>¥374</b>（1.6%）</div>
-        </div>
-        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fksdenki%2F4549980763667.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
-      </div>
-    </article>
-
-    <article class="card" data-profit="90" data-margin="0.40">
-      <a class="thumb" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fksdenki%2F4549980857809.html" target="_blank" rel="nofollow sponsored noopener">
-        <span class="rank">3</span><img src="https://item-shopping.c.yimg.jp/i/g/ksdenki_4549980857809" alt="パナソニック EH-NA9M-E" loading="lazy">
-        <span class="tap">タップで商品へ ▶</span>
-      </a>
-      <div class="info">
-        <a class="name" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fksdenki%2F4549980857809.html" target="_blank" rel="nofollow sponsored noopener">パナソニック EH-NA9M-E</a>
-        <div class="shop">🏬 ケーズデンキ Yahoo!ショップ</div>
-        <div class="lines">
-          <div>💰 ヤフショ価格 <b>¥25,740</b></div>
-          <div>🎁 獲得ポイント <b>5,830pt</b></div>
-          <div class="eff">💻 実質価格 <b>¥19,910</b></div>
-          <div class="profit">📦 買取 ¥20,000 → 利益 <b>¥90</b>（0.4%）</div>
-        </div>
-        <a class="btn" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3772181&amp;pid=892656432&amp;vc_url=https%3A%2F%2Fstore.shopping.yahoo.co.jp%2Fksdenki%2F4549980857809.html" target="_blank" rel="nofollow sponsored noopener">Yahoo!ショッピングで見る ▶</a>
-      </div>
-    </article>
+<p class="empty">本日の掲載商品はありません</p>
   </div>
   <footer>
-    実質価格 = 買取価格 − 見込み利益(ポイント・クーポン還元後の実質支払額)。<br>
-    最終更新 2026/10/22 13:43<br>
+    実質 = 買取価格 − 見込み利益（ポイント・クーポン還元後の実質支払額）<br>
+    最終更新 2026/11/16 00:40<br>
     #ヤフーショッピング #ポイ活 #せどり
-    <div class="ad-disclosure">※本ページはアフィリエイト広告(バリューコマース)を利用しています。</div>
   </footer>
 </div>
 <script>
